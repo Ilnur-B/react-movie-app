@@ -11,3 +11,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+nav {
+  padding: 0 30px ;
+}
+main {
+  padding: 30px 70px;
+  min-height: calc(100vh - 64px - 70px);
+}
+
+.card-content {
+  padding: 10px !important;
+}
+
+.card-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.btn {
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+label:not(:last-child){
+  margin-right: 40px;
+}
