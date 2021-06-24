@@ -11,7 +11,7 @@ const Main = () => {
 
     const searchMovies = (str, type) => {
         setLoading(true)
-        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${str}${type !== 'all' ? `&type=${type}` : ''}`)
+        fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${str}${type !== 'all' ? `&type=${type}` : ''}`)
 
 
             .then(response => response.json())
@@ -24,13 +24,17 @@ const Main = () => {
 
     useEffect(() => {
         setLoading(true)
-        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=deftones`)
+        fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=deftones`)
             .then(response => response.json())
             .then(data => {
                 setMovies(data.Search);
                 setLoading(false);
             }
         )
+            .catch((error)=>{
+                console.log(error)
+                setLoading(false)
+        })
     }, [])
 
 
